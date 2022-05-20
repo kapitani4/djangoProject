@@ -14,7 +14,7 @@ def about(request):
     return render(request, 'aviadb/about.html')
 
 
-def compartments(request):
+def compartments(request, air_id):
     compartments = Compartments.objects.all()
     return render(request, 'aviadb/compartments.html', {'title': 'Отсеки', 'compartments' : compartments})
 
