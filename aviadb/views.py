@@ -14,10 +14,10 @@ def about(request):
     return render(request, 'aviadb/about.html')
 
 
-def compartments(request, air_id):
+def compartments(request):
     compartments = Compartments.objects.all()
     return render(request, 'aviadb/compartments.html', {'title': 'Отсеки', 'compartments' : compartments})
 
-def drawing(request, compartments_id):
+def drawing(request):
     drawing = Drawing.objects.all()
     return render(request, 'aviadb/drawing.html', {'title': 'Чертежи', 'drawing' : drawing})
