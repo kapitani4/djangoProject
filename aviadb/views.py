@@ -15,7 +15,7 @@ def about(request):
 
 
 def compartments(request, air_id):
-    compartments = Compartments.objects.all()
+    compartments = Compartments.objects.filter(id = air_id)
     return render(request, 'aviadb/compartments.html', {'title': 'Отсеки', 'compartments' : compartments})
 
 def drawing(request):
