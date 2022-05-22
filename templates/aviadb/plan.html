@@ -1,0 +1,45 @@
+{% extends 'aviadb/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Чертеж</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr scope="col">
+                <td>Название</td>
+                <td>Чертеж</td>
+                <td>Оснастка</td>
+                <td>Материал</td>
+                <td>Общая площадь</td>
+                <td>Масса</td>
+                <td>Diamino</td>
+                <td>Laser 3D</td>
+                <td>Ревизия</td>
+                <td>Образцы свидетели</td>
+                <td>Исполнитель</td>
+                <td>Количество А4</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row">
+                {% for el in plan %}
+                <td>{{ el.name }}</td>
+                <td>{{ el.plan }}</td>
+                <td>{{ el.equipment }}</td>
+                <td>{{ el.material }}</td>
+                <td>{{ el.squad}}</td>
+                <td>{{ el.weight }}</td>
+                <td>{{ el.diamino }}</td>
+                <td>{{ el.laser3d }}</td>
+                <td>{{ el.revision }}</td>
+                <td>{{ el.samplesAreWitnesses }}</td>
+                <td>{{ el.executor }}</td>
+                <td>{{ el.quantityA4 }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

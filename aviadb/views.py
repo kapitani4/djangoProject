@@ -15,9 +15,13 @@ def about(request):
 
 
 def compartments(request, air_id):
-    compartments = Compartments.objects.filter(id = air_id)
+    compartments = Compartments.objects.filter(model = air_id)
     return render(request, 'aviadb/compartments.html', {'title': 'Отсеки', 'compartments' : compartments})
 
-def drawing(request):
-    drawing = Drawing.objects.all()
+def drawing(request, compartments_id):
+    drawing = Drawing.objects.filter(detail = compartments_id)
     return render(request, 'aviadb/drawing.html', {'title': 'Чертежи', 'drawing' : drawing})
+
+def plan(request, drawing_id):
+    plan = Drawing.objects.filter(id = drawing_id)
+    return render(request, 'aviadb/plan.html', {'title': 'Чертеж', 'plan': plan})
