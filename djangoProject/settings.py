@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'aviadb',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    'static/source',
+    'static',
+
 ]
 
 # Default primary key field type
