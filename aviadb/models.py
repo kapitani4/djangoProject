@@ -21,7 +21,7 @@ class Aircraft(models.Model):
 
     productName = models.CharField(max_length=200, default='Models', help_text="Название модели")
     description = models.CharField(max_length=400, default='Description', help_text="Описание модели самолета")
-    photo = models.CharField(max_length=200, default='/', help_text="Ссылка на фото")
+    photo = models.ImageField(upload_to='media')
 
     def __str__(self):
         return self.productName

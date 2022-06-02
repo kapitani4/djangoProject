@@ -1,5 +1,7 @@
 from django.urls import re_path, path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     re_path(r'^about', views.about, name='about'),
@@ -7,4 +9,4 @@ urlpatterns = [
     re_path(r'^drawing/(?P<compartments_id>[0-9])/', views.drawing, name='drawing'),
     re_path(r'^plan/(?P<drawing_id>[0-9])/', views.plan, name='plan'),
     path('', views.index, name='home')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

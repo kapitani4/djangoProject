@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="align-baseline">
-                <img src="{% static "images/an-148.jpg" %}" class="img-thumbnail" alt="AN-148" width="200" height="100">
+                <img src="{{ el.photo.url }}" alt="{{ el.productName }}" height="50%" >
             </div>
         {% endfor %}
     </div>
