@@ -25,3 +25,6 @@ def drawing(request, compartments_id):
 def plan(request, drawing_id):
     plan = Drawing.objects.filter(id = drawing_id)
     return render(request, 'aviadb/plan.html', {'title': 'Чертеж', 'plan': plan})
+
+def files(request, drawing_id, filename):
+    return filename

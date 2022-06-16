@@ -21,7 +21,4 @@ from aviadb import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('aviadb.urls'))
-    # re_path(r'^$', views.index),
-    # re_path(r'^about',views.about),
-    # re_path(r'^contact',views.contact),
 ]

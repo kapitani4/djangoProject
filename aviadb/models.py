@@ -36,7 +36,7 @@ class Drawing(models.Model):
     ###Таблица с чертежами###
 
     plan = models.CharField(max_length=200, help_text="Чертеж")
-    #planFile = models.FileField(upload_to='files')
+    planFile = models.FileField(upload_to='files', default='plan.jpg', verbose_name='Файл')
     equipment = models.CharField(max_length=200, help_text="Оснастка")
     #equipmentFile = models.FileField(upload_to='files')
     material = models.CharField(max_length=200, help_text="Материал")
